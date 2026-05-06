@@ -1,15 +1,12 @@
-// Export for Jasmine tests (added for Part B)
 function calculate(principal, rate, years) {
   return principal * rate * years;
 }
 
-// DOM event handler - fixes TypeErrors with parseFloat
 function calculateInterest() {
-  let principal = parseFloat(document.getElementById("principal").value);
-  let rate = parseFloat(document.getElementById("rate").value) / 100;
-  let years = parseFloat(document.getElementById("years").value);
+  let principal = parseFloat(document.getElementById("principal").value);  // ✅ Converts to number
+  let rate = parseFloat(document.getElementById("rate").value) / 100;      // ✅ Converts + /100
+  let years = parseFloat(document.getElementById("years").value);          // ✅ Converts to number
   
-  // Check for invalid inputs
   if (isNaN(principal) || isNaN(rate) || isNaN(years)) {
     document.getElementById("interest").innerHTML = "Please enter valid numbers";
     return;
@@ -19,5 +16,4 @@ function calculateInterest() {
   document.getElementById("interest").innerHTML = interest.toFixed(2);
 }
 
-// Global onclick handler (fixes original broken onclick)
-window.calculate = calculateInterest;
+window.calculate = calculateInterest;  // ✅ Fixes onclick binding
