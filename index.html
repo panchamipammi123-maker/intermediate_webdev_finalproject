@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ✅ TITLE for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interest Rate Calculator</title>
-    <!-- ✅ META DESCRIPTION for SEO -->
-    <meta name="description" content="...interest calculator...">
-    <!-- ✅ FAVICON -->
+    <meta name="description" content="Calculate simple interest rates for loans and investments">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- ✅ CSS REFERENCE -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ✅ H1 for SEO -->
     <h1>Interest Rate Calculator</h1>
-    <!-- form inputs + button -->
-    <!-- ✅ JS REFERENCE (script.js OR dist/bundle.js for Task 5) -->
-    <script src="script.js"></script>  <!-- or bundle.js -->
+    <div>
+        <label>Principal ($): <input type="number" id="principal"></label>
+        <label>Rate (%): <input type="number" id="rate"></label>
+        <label>Years: <input type="number" id="years"></label>
+        <button onclick="calculateInterest()">Calculate</button>
+        <p>Interest: $<span id="interest">0.00</span></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
